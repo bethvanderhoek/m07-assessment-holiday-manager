@@ -236,7 +236,7 @@ class HolidayList:
                         datetime_holiday = datetime.combine(date_holiday, datetime.min.time())
                         timestamp_holiday = int(datetime.timestamp(datetime_holiday))
                         weather_api = weather_api
-                        url = weather_website
+                        url = (f'http://api.openweathermap.org/data/3.0/onecall/timemachine?lat=44.8041&lon=-93.1669&dt={timestamp_holiday}&appid={weather_api}')
                         response = requests.get(url)
                         json_data = json.loads(response.text)
                         try:
